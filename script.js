@@ -3,10 +3,6 @@ let text
 const allDiv = document.querySelector("#alldiv")
 const todoDiv = document.querySelector("#tododiv")
 const doneDiv = document.querySelector("#donediv")
-allDiv.append(todoDiv)
-allDiv.append(doneDiv)
-document.body.append(allDiv)
-
 
 // text = input
 const inputCallback = (ev) => {
@@ -42,11 +38,11 @@ const addlist = () =>{
         const allbtn = document.createElement('div')
         deletebtn.innerHTML = 'Delete'
         deletebtn.style.visibility = "hidden"
-        deletebtn.classList.add("bg-yellow-300")
+        deletebtn.classList.add("bg-yellow-300","animate-pulse")
         const donebtn = document.createElement('button')
         donebtn.innerHTML = 'Done'
         donebtn.style.visibility = "hidden"
-        donebtn.classList.add("bg-red-400","mr-2","ml-5")
+        donebtn.classList.add("bg-red-400","mr-2","ml-5","animate-bounce")
         allDiv.classList.add("justify-end")
 
         // text
@@ -73,6 +69,7 @@ const addlist = () =>{
         // append everthing in task, append task in todoDiv
         allbtn.append(donebtn)
         allbtn.append(deletebtn)
+        allbtn.classList.add("justify-end")
         task.append(allbtn)
         task.addEventListener("mouseout", () => {
             deletebtn.style.visibility = "hidden"
@@ -82,7 +79,7 @@ const addlist = () =>{
             deletebtn.style.visibility = "visible"
             donebtn.style.visibility = "visible"
         })
-        task.classList.add("flex", "bg-blue-100","rounded-full","mb-2","px-10")
+        task.classList.add("flex","bg-blue-100","mb-5","px-10")
 
         task.append(document.createElement('br'))
         todoDiv.prepend(task)
