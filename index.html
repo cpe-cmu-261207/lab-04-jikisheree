@@ -7,13 +7,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src='script.js' defer></script>
 	<title>Lab 04</title>
-	<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	
 </head>
 
-<body>
-	<h1>Minimal Todo List</h1>
-	<input  type='text'>
-	<button>+</button>
+
+<body class="m-10 border-black bg-blue-200 border-8 pt-10 pb-96">
+
+		<h1 class="pt-5 text-center" style=" font-weight: bold; font-family: 'Quicksand', sans-serif; font-size: 80px ;">Minimal Todo List</h1>
+	<div class=" p-5 max-w-screen-md mx-auto flex " style=" background-image: url(img/water.gif)">
+		<input id="myInput" oninput = 'inputCallback(event)' type='text' onkeydown="EnterKey(event)" placeholder="Enter your Task..."
+		class=" ml-20 border-8 w-9/12 h-16" style="font-family: 'Quicksand', sans-serif; font-size: 40px ;" >
+		<div id="myList">
+		<img src = "img/plus.jpg"
+		id="myBtn" onclick = 'clickCallback()' class="mt-3 w-10 h-10 ml-2 ">
+		</div>
+	</div>
+	<div id="alldiv" class=" max-w-screen-md mx-auto mt-5">
+		<div id="tododiv" class=" " style="font-family: 'Quicksand', sans-serif; font-size: 40px ;"></div>
+		<div id="donediv"  class="text-center" style="font-family: 'Quicksand', sans-serif; font-size: 40px ;"></div>
+	</div>
 </body>
 
 </html>
