@@ -86,5 +86,4 @@ const addlist = () =>{
 
         task.append(document.createElement('br'))
         todoDiv.prepend(task)
-    
-    }
+}
